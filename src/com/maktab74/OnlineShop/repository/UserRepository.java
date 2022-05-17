@@ -41,4 +41,16 @@ public class UserRepository {
 
         return null;
     }
+
+    public int getUserByUsername(String username) throws SQLException {
+        String query = "select * from user where username = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, username);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            return 1;
+        }
+
+        return 0;
+    }
 }
