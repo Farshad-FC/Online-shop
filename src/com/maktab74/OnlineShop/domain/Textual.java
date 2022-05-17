@@ -1,9 +1,9 @@
 package com.maktab74.OnlineShop.domain;
 
-public class Readable extends Product {
+public class Textual extends Product {
 
     private String title;
-    private String content;
+    private String about;
     private String author;
     private String category;
     private String paperback;
@@ -11,13 +11,13 @@ public class Readable extends Product {
     private String coverAndEdition;
     private String publication;
 
-    public Readable() {
+    public Textual() {
     }
 
-    public Readable(int id, String name, String type, int inventory, int price, String title, String content, String author, String category, String paperback, String language, String coverAndEdition, String publication) {
+    public Textual(int id, String name, String type, int inventory, int price, String title, String about, String author, String category, String paperback, String language, String coverAndEdition, String publication) {
         super(id, name, type, inventory, price);
         this.title = title;
-        this.content = content;
+        this.about = about;
         this.author = author;
         this.category = category;
         this.paperback = paperback;
@@ -26,10 +26,10 @@ public class Readable extends Product {
         this.publication = publication;
     }
 
-    public Readable(String name, String type, int inventory, int price, String title, String content, String author, String category, String paperback, String language, String coverAndEdition, String publication) {
+    public Textual(String name, String type, int inventory, int price, String title, String about, String author, String category, String paperback, String language, String coverAndEdition, String publication) {
         super(name, type, inventory, price);
         this.title = title;
-        this.content = content;
+        this.about = about;
         this.author = author;
         this.category = category;
         this.paperback = paperback;
@@ -46,12 +46,12 @@ public class Readable extends Product {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getAbout() {
+        return about;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     public String getAuthor() {

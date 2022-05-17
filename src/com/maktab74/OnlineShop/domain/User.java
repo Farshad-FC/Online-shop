@@ -10,10 +10,31 @@ public class User {
     private String phoneNumber;
     private String email;
 
-    private String state;
-    private String city;
-    private String street;
-    private String postalCode;
+    private Address address;
+
+    public User() {
+    }
+
+    public User(int id, String username, String password, String firstName, String lastName, String phoneNumber, String email, Address address) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+    public User(String username, String password, String firstName, String lastName, String phoneNumber, String email, Address address) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
 
     public int getId() {
         return id;
@@ -71,35 +92,11 @@ public class User {
         this.email = email;
     }
 
-    public String getState() {
-        return state;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
