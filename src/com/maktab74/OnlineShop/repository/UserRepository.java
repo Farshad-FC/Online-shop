@@ -3,16 +3,38 @@ package com.maktab74.OnlineShop.repository;
 import com.maktab74.OnlineShop.domain.Address;
 import com.maktab74.OnlineShop.domain.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class UserRepository {
     private Connection connection;
 
     public UserRepository(Connection connection) {
         this.connection = connection;
+    }
+
+    public User insert(User user) throws SQLException {
+        String insertQuery = "insert into user(" +
+                "username, password, first_name, last_name, phone_number, " +
+                "email, province, city, street, postal_code" +
+                ") values (? ,?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement preparedStatement =
+                connection.prepareStatement(insertQuery);
+        preparedStatement.setString(1, user.getUsername());
+        preparedStatement.setString(2, user.getPassword());
+        preparedStatement.setString(3, user.getFirstName());
+        preparedStatement.setString(4, user.getLastName());
+        preparedStatement.setString(5, user.getPhoneNumber());
+        preparedStatement.setString(6, user.getEmail());
+        preparedStatement.setString(7, user.getAddress().getProvince());
+        preparedStatement.setString(8, user.getAddress().getCity());
+        preparedStatement.setString(9, user.getAddress().getStreet());
+        preparedStatement.setString(10, user.getAddress().getPostalCode());
+        preparedStatement.executeUpdate();
+
+        user.setId(getMaxId());
+
+        return user;
     }
 
     public User getByUsernameAndPassword(String username, String password) throws SQLException {
@@ -51,6 +73,15 @@ public class UserRepository {
             return 1;
         }
 
+        return 0;
+    }
+
+    public int getMaxId() throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("select max(id) from user");
+        if (resultSet.next()) {
+            return resultSet.getInt(1);
+        }
         return 0;
     }
 }
