@@ -1,43 +1,55 @@
 package com.maktab74.OnlineShop.domain;
 
-public class Cart {
+public class Cart extends Base {
 
-    private ElectronicProduct[] electrics;
+    private int userId;
 
-    private Shoe[] shoes;
+    private int productId;
 
-    private Textual[] textuals;
+    private String productType;
+
+    private int count;
 
     public Cart() {
     }
 
-    public Cart(ElectronicProduct[] electrics, Shoe[] shoes, Textual[] textuals) {
-        this.electrics = electrics;
-        this.shoes = shoes;
-        this.textuals = textuals;
+    public Cart(int id, int userId, int productId, String productType, int count) {
+        super(id);
+        this.userId = userId;
+        this.productId = productId;
+        this.productType = productType;
+        this.count = count;
     }
 
-    public ElectronicProduct[] getElectrics() {
-        return electrics;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setElectrics(ElectronicProduct[] electrics) {
-        this.electrics = electrics;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public Shoe[] getShoes() {
-        return shoes;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setShoes(Shoe[] shoes) {
-        this.shoes = shoes;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public Textual[] getTextuals() {
-        return textuals;
+    public String getProductType() {
+        return productType;
     }
 
-    public void setTextuals(Textual[] textuals) {
-        this.textuals = textuals;
+    public void setProductType(String productType) {
+        this.productType = productType;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
