@@ -1,7 +1,6 @@
 package com.maktab74.OnlineShop.domain;
 
-public class User {
-    private int id;
+public class User extends Base {
     private String username;
     private String password;
 
@@ -15,17 +14,6 @@ public class User {
     public User() {
     }
 
-    public User(int id, String username, String password, String firstName, String lastName, String phoneNumber, String email, Address address) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-    }
-
     public User(String username, String password, String firstName, String lastName, String phoneNumber, String email, Address address) {
         this.username = username;
         this.password = password;
@@ -34,14 +22,6 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {

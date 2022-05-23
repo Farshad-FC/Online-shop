@@ -2,7 +2,7 @@ package com.maktab74.OnlineShop.domain;
 
 public class Cart {
 
-    private Electric[] electrics;
+    private ElectronicProduct[] electrics;
 
     private Shoe[] shoes;
 
@@ -11,17 +11,17 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(Electric[] electrics, Shoe[] shoes, Textual[] textuals) {
+    public Cart(ElectronicProduct[] electrics, Shoe[] shoes, Textual[] textuals) {
         this.electrics = electrics;
         this.shoes = shoes;
         this.textuals = textuals;
     }
 
-    public Electric[] getElectrics() {
+    public ElectronicProduct[] getElectrics() {
         return electrics;
     }
 
-    public void setElectrics(Electric[] electrics) {
+    public void setElectrics(ElectronicProduct[] electrics) {
         this.electrics = electrics;
     }
 
