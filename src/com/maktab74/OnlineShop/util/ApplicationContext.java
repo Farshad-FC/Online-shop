@@ -1,6 +1,6 @@
 package com.maktab74.OnlineShop.util;
 
-import com.maktab74.OnlineShop.repository.UserRepository;
+import com.maktab74.OnlineShop.repository.*;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -18,7 +18,17 @@ public class ApplicationContext {
 
     private UserRepository userRepository = null;
 
-    //Other-Reposiroty
+    private TVRepository tvRepository = null;
+
+    private RadioRepository radioRepository = null;
+
+    private ShoeRepository shoeRepository = null;
+
+    private BookRepository bookRepository = null;
+
+    private MagazineRepository magazineRepository = null;
+
+    private CartRepository cartRepository = null;
 
     private SecurityContext securityContext = new SecurityContext();
 
@@ -63,6 +73,48 @@ public class ApplicationContext {
             this.userRepository = new UserRepository(databaseUtil.getConnection());
         }
         return userRepository;
+    }
+
+    public TVRepository getTvRepository() {
+        if (tvRepository == null) {
+            this.tvRepository = new TVRepository(databaseUtil.getConnection());
+        }
+        return tvRepository;
+    }
+
+    public RadioRepository getRadioRepository() {
+        if (radioRepository == null) {
+            this.radioRepository = new RadioRepository(databaseUtil.getConnection());
+        }
+        return radioRepository;
+    }
+
+    public ShoeRepository getShoeRepository() {
+        if (shoeRepository == null) {
+            this.shoeRepository = new ShoeRepository(databaseUtil.getConnection());
+        }
+        return shoeRepository;
+    }
+
+    public BookRepository getBookRepository() {
+        if (bookRepository == null) {
+            this.bookRepository = new BookRepository(databaseUtil.getConnection());
+        }
+        return bookRepository;
+    }
+
+    public MagazineRepository getMagazineRepository() {
+        if (magazineRepository == null) {
+            this.magazineRepository = new MagazineRepository(databaseUtil.getConnection());
+        }
+        return magazineRepository;
+    }
+
+    public CartRepository getCartRepository() {
+        if (cartRepository == null) {
+            this.cartRepository = new CartRepository(databaseUtil.getConnection());
+        }
+        return cartRepository;
     }
 
     public SecurityContext getSecurityContext() {
