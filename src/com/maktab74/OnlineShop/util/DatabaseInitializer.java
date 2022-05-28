@@ -18,13 +18,100 @@ public class DatabaseInitializer {
 
         initUserTable();
 
-        initElectricTable();
+        initTVTable();
+
+        initRadioTable();
 
         initShoeTable();
 
-        initTextualTable();
+        initBookTable();
+
+        initMagazineTable();
 
         initCartTable();
+    }
+
+    private void initRadioTable() throws SQLException {
+        String createRadioTable =
+                "create table if not exists radio" +
+                        "(" +
+                        "id int not null unique auto_increment," +
+                        "model varchar(45) not null," +
+                        "brand varchar(20) not null," +
+                        "waves_type varchar(20) not null," +
+                        "search_type varchar(30) not null," +
+                        "power_consumption varchar(5) not null," +
+                        "communication_portal varchar(127) not null," +
+                        "inventory int not null," +
+                        "price int not null," +
+                        "primary key (id)" +
+                        ")";
+
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(createRadioTable);
+    }
+
+    private void initTVTable() throws SQLException {
+        String createTVTable =
+                "create table if not exists tv" +
+                        "(" +
+                        "id int not null unique auto_increment," +
+                        "model varchar(45) not null," +
+                        "brand varchar(20) not null," +
+                        "screen_size varchar(3) not null," +
+                        "quality_resolution varchar(30) not null," +
+                        "power_consumption varchar(5) not null," +
+                        "communication_portal varchar(127) not null," +
+                        "number_of_speakers varchar(2) not null," +
+                        "inventory int not null," +
+                        "price int not null," +
+                        "primary key (id)" +
+                        ")";
+
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(createTVTable);
+    }
+
+    private void initMagazineTable() throws SQLException {
+        String createMagazineTable =
+                "create table if not exists magazine" +
+                        "(" +
+                        "id int not null unique auto_increment," +
+                        "title varchar(255) not null," +
+                        "category varchar(63) not null," +
+                        "paperback varchar(4) not null," +
+                        "language varchar(20) not null," +
+                        "publishing_period varchar(20) not null," +
+                        "cover_and_edition varchar(63) not null," +
+                        "publication varchar(63) not null," +
+                        "inventory int not null," +
+                        "price int not null," +
+                        "primary key (id)" +
+                        ")";
+
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(createMagazineTable);
+    }
+
+    private void initBookTable() throws SQLException {
+        String createBookTable =
+                "create table if not exists book" +
+                        "(" +
+                        "id int not null unique auto_increment," +
+                        "title varchar(255) not null," +
+                        "author varchar(127) not null," +
+                        "category varchar(63) not null," +
+                        "paperback varchar(4) not null," +
+                        "language varchar(20) not null," +
+                        "cover_and_edition varchar(63) not null," +
+                        "publication varchar(63) not null," +
+                        "inventory int not null," +
+                        "price int not null," +
+                        "primary key (id)" +
+                        ")";
+
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(createBookTable);
     }
 
     private void initCartTable() throws SQLException {
@@ -47,16 +134,13 @@ public class DatabaseInitializer {
 
     private void initShoeTable() throws SQLException {
         String createShoeTable =
-                "create table if not exists tag" +
+                "create table if not exists shoe" +
                         "(" +
                         "id int not null unique auto_increment," +
-                        "name varchar(45) not null," +
-                        "type varchar(45) not null," +
                         "model varchar(45) not null," +
                         "size varchar(2) not null," +
                         "color varchar(20) not null," +
                         "brand varchar(20) not null," +
-                        "closure varchar(20) not null," +
                         "inventory int not null," +
                         "price int not null," +
                         "primary key (id)" +
@@ -64,27 +148,6 @@ public class DatabaseInitializer {
 
         Statement statement = connection.createStatement();
         statement.executeUpdate(createShoeTable);
-    }
-
-    private void initElectricTable() throws SQLException {
-        String createElectricTable =
-                "create table if not exists category" +
-                        "(" +
-                        "id int not null unique auto_increment," +
-                        "name varchar(45) not null," +
-                        "type varchar(45) not null," +
-                        "model varchar(45) not null," +
-                        "brand varchar(20) not null," +
-                        "power_consumption varchar(5) not null," +
-                        "communication_portal varchar(127) not null," +
-                        "number_of_speakers varchar(2) not null," +
-                        "inventory int not null," +
-                        "price int not null," +
-                        "primary key (id)" +
-                        ")";
-
-        Statement statement = connection.createStatement();
-        statement.executeUpdate(createElectricTable);
     }
 
     private void initSchema() throws SQLException {
@@ -105,42 +168,18 @@ public class DatabaseInitializer {
                         "id int not null unique auto_increment," +
                         "username varchar(255) unique," +
                         "password varchar(255)," +
-                        "firstName varchar(20) ," +
-                        "lastName varchar(20) ," +
-                        "phoneNumber varchar(11) unique," +
+                        "first_name varchar(20) ," +
+                        "last_name varchar(20) ," +
+                        "phone_number varchar(11) unique," +
                         "email varchar(64) unique," +
                         "province varchar(20)," +
                         "city varchar(20)," +
                         "street varchar(255)," +
-                        "postalCode varchar(10) unique," +
+                        "postal_code varchar(10) unique," +
                         "primary key (id)" +
                         ")";
 
         Statement statement = connection.createStatement();
         statement.executeUpdate(createUserTable);
-    }
-
-    private void initTextualTable() throws SQLException {
-        String createArticleTable =
-                "create table if not exists article" +
-                        "(" +
-                        "id int not null unique auto_increment," +
-                        "name varchar(45) not null," +
-                        "type varchar(45) not null," +
-                        "title varchar(255) not null," +
-                        "about varchar(255) not null," +
-                        "author varchar(127) not null," +
-                        "category varchar(63) not null," +
-                        "paperback varchar(4) not null," +
-                        "language varchar(20) not null," +
-                        "cover_and_edition varchar(63) not null," +
-                        "publication varchar(63) not null," +
-                        "inventory int not null," +
-                        "price int not null," +
-                        "primary key (id)" +
-                        ")";
-
-        Statement statement = connection.createStatement();
-        statement.executeUpdate(createArticleTable);
     }
 }
