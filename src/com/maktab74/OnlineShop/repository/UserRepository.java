@@ -37,7 +37,7 @@ public class UserRepository {
         return user;
     }
 
-    public User getByUsernameAndPassword(String username, String password) throws SQLException {
+    public User getUserByUsernameAndPassword(String username, String password) throws SQLException {
         String query = "select * from user where username = ? and password = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, username);
