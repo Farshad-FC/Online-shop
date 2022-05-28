@@ -5,28 +5,15 @@ public class Shoe extends Product {
     private String model;
     private String size;
     private String color;
-    private String brand;
-    private String closure;
 
     public Shoe() {
     }
 
-    public Shoe(int id, String name, String type, int inventory, int price, String model, String size, String color, String brand, String closure) {
-        super(id, name, type, inventory, price);
+    public Shoe(int id, String brand, int inventory, int price, String model, String size, String color) {
+        super(id, brand, inventory, price);
         this.model = model;
         this.size = size;
         this.color = color;
-        this.brand = brand;
-        this.closure = closure;
-    }
-
-    public Shoe(String name, String type, int inventory, int price, String model, String size, String color, String brand, String closure) {
-        super(name, type, inventory, price);
-        this.model = model;
-        this.size = size;
-        this.color = color;
-        this.brand = brand;
-        this.closure = closure;
     }
 
     public String getModel() {
@@ -53,19 +40,13 @@ public class Shoe extends Product {
         this.color = color;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getClosure() {
-        return closure;
-    }
-
-    public void setClosure(String closure) {
-        this.closure = closure;
+    @Override
+    public String toString() {
+        return "Shoe{" +
+                super.toString() +
+                "model='" + model + '\'' +
+                ", size='" + size + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 }

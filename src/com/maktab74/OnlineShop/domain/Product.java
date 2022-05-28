@@ -1,52 +1,26 @@
 package com.maktab74.OnlineShop.domain;
 
-public class Product {
-    private int id;
-    private String name;
-    private String type;
+public abstract class Product extends Base {
+    private String brand;
     private int inventory;
     private int Price;
 
     public Product() {
     }
 
-    public Product(int id, String name, String type, int inventory, int price) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
+    public Product(int id, String brand, int inventory, int price) {
+        super(id);
+        this.brand = brand;
         this.inventory = inventory;
         Price = price;
     }
 
-    public Product(String name, String type, int inventory, int price) {
-        this.name = name;
-        this.type = type;
-        this.inventory = inventory;
-        Price = price;
+    public String getBrand() {
+        return brand;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public int getInventory() {
@@ -63,5 +37,15 @@ public class Product {
 
     public void setPrice(int price) {
         Price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                super.toString() +
+                "brand='" + brand + '\'' +
+                ", inventory=" + inventory +
+                ", Price=" + Price +
+                '}';
     }
 }
