@@ -39,4 +39,13 @@ public class TVRepository {
         }
         return tvs;
     }
+
+    public int getCountTV() throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("select count(id) from tv");
+        if (resultSet.next()) {
+            return resultSet.getInt(1);
+        }
+        return 0;
+    }
 }
