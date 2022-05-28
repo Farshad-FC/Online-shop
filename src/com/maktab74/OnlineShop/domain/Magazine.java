@@ -18,4 +18,12 @@ public class Magazine extends Textual {
     public void setPublishingPeriod(String publishingPeriod) {
         this.publishingPeriod = publishingPeriod;
     }
+
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                super.toString() +
+                "publishingPeriod='" + publishingPeriod + '\'' +
+                '}';
+    }
 }

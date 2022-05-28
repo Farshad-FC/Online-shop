@@ -10,15 +10,18 @@ public class Cart extends Base {
 
     private int count;
 
+    private int totalPrice;
+
     public Cart() {
     }
 
-    public Cart(int id, int userId, int productId, String productType, int count) {
+    public Cart(int id, int userId, int productId, String productType, int count, int totalPrice) {
         super(id);
         this.userId = userId;
         this.productId = productId;
         this.productType = productType;
         this.count = count;
+        this.totalPrice = totalPrice;
     }
 
     public int getUserId() {
@@ -51,5 +54,25 @@ public class Cart extends Base {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                super.toString() +
+                "userId=" + userId +
+                ", productId=" + productId +
+                ", productType='" + productType + '\'' +
+                ", count=" + count +
+                ", totalPrice=" + totalPrice +
+                '}';
     }
 }

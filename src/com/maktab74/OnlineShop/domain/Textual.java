@@ -59,4 +59,16 @@ public abstract class Textual extends Product {
     public void setCoverAndEdition(String coverAndEdition) {
         this.coverAndEdition = coverAndEdition;
     }
+
+    @Override
+    public String toString() {
+        return "Textual{" +
+                super.toString() +
+                "title='" + title + '\'' +
+                ", category='" + category + '\'' +
+                ", paperback='" + paperback + '\'' +
+                ", language='" + language + '\'' +
+                ", coverAndEdition='" + coverAndEdition + '\'' +
+                '}';
+    }
 }

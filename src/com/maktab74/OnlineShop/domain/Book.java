@@ -18,4 +18,12 @@ public class Book extends Textual {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                super.toString() +
+                "author='" + author + '\'' +
+                '}';
+    }
 }

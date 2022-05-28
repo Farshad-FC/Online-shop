@@ -1,25 +1,25 @@
 package com.maktab74.OnlineShop.domain;
 
 public class TV extends ElectronicProduct {
-    private int screenSize;
+    private String screenSize;
     private String qualityResolution;
     private String numberOfSpeakers;
 
     public TV() {
     }
 
-    public TV(int id, String brand, int inventory, int price, String model, String powerConsumption, String communicationPortal, int screenSize, String qualityResolution, String numberOfSpeakers) {
+    public TV(int id, String brand, int inventory, int price, String model, String powerConsumption, String communicationPortal, String screenSize, String qualityResolution, String numberOfSpeakers) {
         super(id, brand, inventory, price, model, powerConsumption, communicationPortal);
         this.screenSize = screenSize;
         this.qualityResolution = qualityResolution;
         this.numberOfSpeakers = numberOfSpeakers;
     }
 
-    public int getScreenSize() {
+    public String getScreenSize() {
         return screenSize;
     }
 
-    public void setScreenSize(int screenSize) {
+    public void setScreenSize(String screenSize) {
         this.screenSize = screenSize;
     }
 
@@ -38,4 +38,15 @@ public class TV extends ElectronicProduct {
     public void setNumberOfSpeakers(String numberOfSpeakers) {
         this.numberOfSpeakers = numberOfSpeakers;
     }
+
+    @Override
+    public String toString() {
+        return "TV{" +
+                super.toString() +
+                "screenSize='" + screenSize + '\'' +
+                ", qualityResolution='" + qualityResolution + '\'' +
+                ", numberOfSpeakers='" + numberOfSpeakers + '\'' +
+                '}';
+    }
+
 }

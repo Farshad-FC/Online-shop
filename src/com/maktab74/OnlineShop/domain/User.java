@@ -14,6 +14,17 @@ public class User extends Base {
     public User() {
     }
 
+    public User(int id, String username, String password, String firstName, String lastName, String phoneNumber, String email, Address address) {
+        super(id);
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
     public User(String username, String password, String firstName, String lastName, String phoneNumber, String email, Address address) {
         this.username = username;
         this.password = password;

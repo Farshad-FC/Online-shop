@@ -9,8 +9,8 @@ public class Shoe extends Product {
     public Shoe() {
     }
 
-    public Shoe(String brand, int inventory, int price, String model, String size, String color) {
-        super(brand, inventory, price);
+    public Shoe(int id, String brand, int inventory, int price, String model, String size, String color) {
+        super(id, brand, inventory, price);
         this.model = model;
         this.size = size;
         this.color = color;
@@ -38,5 +38,15 @@ public class Shoe extends Product {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Shoe{" +
+                super.toString() +
+                "model='" + model + '\'' +
+                ", size='" + size + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 }

@@ -39,4 +39,14 @@ public abstract class ElectronicProduct extends Product {
     public void setCommunicationPortal(String communicationPortal) {
         this.communicationPortal = communicationPortal;
     }
+
+    @Override
+    public String toString() {
+        return "ElectronicProduct{" +
+                super.toString() +
+                "model='" + model + '\'' +
+                ", powerConsumption='" + powerConsumption + '\'' +
+                ", communicationPortal='" + communicationPortal + '\'' +
+                '}';
+    }
 }

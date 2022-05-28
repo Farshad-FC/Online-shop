@@ -38,4 +38,14 @@ public abstract class Product extends Base {
     public void setPrice(int price) {
         Price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                super.toString() +
+                "brand='" + brand + '\'' +
+                ", inventory=" + inventory +
+                ", Price=" + Price +
+                '}';
+    }
 }
