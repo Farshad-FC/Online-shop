@@ -46,12 +46,14 @@ public class Menu {
     }
 
     public void showUserPanelMenu() {
+        seperator();
         System.out.println("1: show my cart");
-        System.out.println("2: add product to cart");
-        System.out.println("3: remove product from cart");
-        System.out.println("4: purchase confirmation");
-        System.out.println("5: logout");
-        System.out.print("plz choose a number:");
+        System.out.println("2: show all products");
+        System.out.println("3: add product to cart");
+        System.out.println("4: remove product from cart");
+        System.out.println("5: purchase confirmation");
+        System.out.println("6: logout");
+        System.out.print("plz choose a number: ");
     }
 
     public void showIncorrectNumberMessage() {
@@ -114,13 +116,65 @@ public class Menu {
         System.out.println("plz enter your postal code:");
     }
 
-    //Product
-
     //Cart
 
-    //Electric
+    public void showCartEmptyMessage() {
+        System.out.println("your cart is empty.");
+    }
+
+    public void showProductMenu() {
+        seperator();
+        System.out.println("1: TV");
+        System.out.println("2: Radio");
+        System.out.println("3: Shoe");
+        System.out.println("4: Book");
+        System.out.println("5: Magazine");
+        System.out.print("plz choose a number: ");
+    }
+
+    public void showSelectedProductMessage() {
+        System.out.print("plz choose a product id: ");
+    }
+
+    public void showEnterNumberOfProductMessage() {
+        System.out.println("please enter the number of products selected(min:1 , max:5): ");
+    }
+
+    public void showUserCartFullMessage() {
+        System.out.println("your cart is full, you can not add products.");
+    }
+
+    public void showSelectedCartMessage() {
+        System.out.println("plz enter the cart id: ");
+    }
+
+    //TV
+
+    public void showTVHeaderMessage() {
+        System.out.println("TV:");
+    }
+
+    //Radio
+
+    public void showRadioHeaderMessage() {
+        System.out.println("Radio:");
+    }
 
     //Shoe
 
-    //Textual
+    public void showShoeHeaderMessage() {
+        System.out.println("Shoe:");
+    }
+
+    //Book
+
+    public void showBookHeaderMessage() {
+        System.out.println("Book:");
+    }
+
+    //Magazine
+
+    public void showMagazineHeaderMessage() {
+        System.out.println("Magazine:");
+    }
 }
